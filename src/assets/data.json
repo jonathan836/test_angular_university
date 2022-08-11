@@ -1,0 +1,50 @@
+{
+  "profesores": [
+    {
+      "id": 1,
+      "nombre": "Ferrer"
+    },
+    {
+      "id": 2,
+      "nombre": "De La Rosa"
+    },
+    {
+      "id": 3,
+      "nombre": "Julio"
+    },
+    {
+      "id": 4,
+      "nombre": "Briceño"
+    },
+    {
+      "id": 5,
+      "nombre": "Alfonso"
+    },
+    {
+      "id": 6,
+      "nombre": "Torres"
+    }
+  ],
+  "alumnos": [
+    {
+      "id": 1631891949741,
+      "nombre": "Zheng"
+    },
+    {
+      "id": 1631891959179,
+      "nombre": "Victor"
+    },
+    {
+      "id": 1631891965804,
+      "nombre": "Richard"
+    },
+    {
+      "id": 1631892011348,
+      "nombre": "dsfsdfsdfdsf"
+    },
+    {
+      "id": 1631892018437,
+      "nombre": "dfdffrgtg"
+    }
+  ]
+}

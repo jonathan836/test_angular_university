@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col">
+        <table class="p-2">
+            <h1>Alumnos</h1>
+        
+            <tr class="color">
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Herramientas</th>
+            </tr>
+        
+            <tr *ngFor="let todo of todoList | paginate: { itemsPerPage: 5, currentPage: page }; index as i;">
+                <td *ngIf="todo.id%2==0; else id" style="background-color: #0dcaf0;">
+                    {{todo.id}}.
+                </td>
+                <ng-template #id>
+                    <td>
+                        {{todo.id}}.
+                    </td>
+                </ng-template>
+        
+                <td *ngIf="todo.id%2==0; else nombre" style="background-color: #0dcaf0;"> 
+                    {{todo.nombre}}
+                </td>
+                <ng-template #nombre>
+                    <td>
+                        {{todo.nombre}}.
+                    </td>
+                </ng-template>
+
+                <td *ngIf="todo.id%2==0; else herra" style="background-color: #0dcaf0;">
+                    <button type="button" class="der btn btn-primary" (click)="editTodo(todo)">Edit</button>
+                    <button type="button" class="der btn btn-danger" (click)="deleteTodo(todo.id)">Delete</button>
+                </td>
+                <ng-template #herra>
+                    <td>
+                        <button type="button" class="der btn btn-primary" (click)="editTodo(todo)">Edit</button>
+                        <button type="button" class="der btn btn-danger" (click)="deleteTodo(todo.id)">Delete</button>
+                    </td>
+                </ng-template>
+            </tr>
+        </table>
+        <button type="button" style="margin-left:100px" class="btn btn-success" (click)="createTodo()">Create</button>
+    </div>
+</div>
+
+<br>
+<pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+
+
+
+
+<!-- <div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Alumno</th>
+                <th>Herramientas</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr *ngFor="let todo of todoList">
+                <td>{{todo.id}}</td>
+                <td>{{todo.title}}</td>
+                <td>
+                    <button type="button" class="btn btn-link" (click)="editTodo(todo)">Edit</button>
+                    <button type="button" class="btn btn-link" (click)="deleteTodo(todo.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-success" (click)="createTodo()">Create</button>
+</div> -->

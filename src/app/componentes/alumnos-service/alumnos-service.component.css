@@ -1,0 +1,13 @@
+table {
+    margin: 30px;
+}
+
+td, th { 
+    border: 1px solid rgb(216, 190, 190);
+    text-align: center;
+    padding: 8px;
+}
+
+.color {
+    background: #0dcaf0;
+}

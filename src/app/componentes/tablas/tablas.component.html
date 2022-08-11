@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col">
+        <table class="p-2">
+            <h1>Tabla 1: Alumnos</h1>
+        
+            <tr class="color">
+                <th>ID</th>
+                <th>Nombre</th>
+            </tr>
+        
+            <tr *ngFor="let alumno of alumnos | paginate: { itemsPerPage: 5, currentPage: page }; index as i;">
+                <td *ngIf="alumno.id%2==0; else id" style="background-color: #0dcaf0;">
+                    {{alumno.id}}.
+                </td>
+                <ng-template #id>
+                    <td>
+                        {{alumno.id}}.
+                    </td>
+                </ng-template>
+        
+                <td *ngIf="alumno.id%2==0; else nombre" style="background-color: #0dcaf0;"> 
+                    {{alumno.nombre}}
+                </td>
+                <ng-template #nombre>
+                    <td>
+                        {{alumno.nombre}}.
+                    </td>
+                </ng-template>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="col">
+        <table class="p-2">
+            <h1>Tabla 2: Profesores</h1>
+        
+            <tr class="color">
+                <th>ID</th>
+                <th>Nombre</th>
+            </tr>
+        
+            <tr *ngFor="let profesor of profesores | paginate: { itemsPerPage: 5, currentPage: page }; index as i;">
+        
+                <td *ngIf="profesor.id%2==0; else id" style="background-color: #0dcaf0;">
+                    {{profesor.id}}.
+                </td>
+                <ng-template #id>
+                    <td>
+                        {{profesor.id}}
+                    </td>
+                </ng-template>
+        
+                <td *ngIf="profesor.id%2==0; else nombre" style="background-color: #0dcaf0;">
+                    {{profesor.nombre}}
+                </td>
+                <ng-template #nombre>
+                    <td>
+                        {{profesor.nombre}}
+                    </td>
+                </ng-template>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+

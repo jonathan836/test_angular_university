@@ -1,0 +1,39 @@
+
+    <div class="container p-4">
+    <h2>Bienvenido!!!</h2>
+
+    <p>Nombre: {{ nombre }}</p>
+    <p>Cedula: {{ cedula }}</p>
+    <p>Semestre: {{ semestre }}</p>
+    <p>Materia: {{ materia }}</p>
+    <!-- {{alumno[0]["nombre"]}} -->
+
+    <br>
+
+    <h2>Lista de alumno:</h2>
+    <li *ngFor="let alumno of alumnos; index as i;" (click)="onClickAlumno(alumno)">
+        {{alumno.id}}. <button type="button" class="btn btn-success">{{alumno.nombre}}</button>
+    </li>
+
+    <br>
+    <button (click)="onClickAgregar()" type="button" class="btn btn-primary" >Agregar</button>
+    <button (click)="onClickEliminar()" type="button" class="btn btn-primary">Eliminar</button>
+    </div>
+
+
+<!--
+    <div class="container p-4">
+        <span>id: </span>{{ alumnos.id }}
+    </div>
+
+    <div class="container p-4">
+        <label for="">
+            Nombre: <input type="text" placeholder="Nombre" [(ngModel)]="alumnos.nombre">
+        </label>
+
+        <br>
+
+        <span>Nombre: </span>{{ alumnos.nombre }}
+    </div>
+-->
+
